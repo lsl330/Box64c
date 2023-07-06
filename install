@@ -2,18 +2,18 @@
 
 cd
 echo ""
-echo "Сlick on allow to proceed"
+echo "获取文件管理权限"
 termux-setup-storage & sleep 4 &>/dev/null
 while true; do
 if [ -e storage ]; then
-rm -rf /sdcard/termux-box
+rm -rf /sdcard/box64c
 break
 else
-echo "If you denied permission, change it manually in termux app settings now"
+echo "你必须授权文件管理权限才能进行下一步操作"
 fi
 sleep 1
 done
-mkdir -p /sdcard/termux-box
+mkdir -p /sdcard/box64c
 pkg clean
 pkg update -y
 pkg upgrade -y
@@ -27,43 +27,36 @@ pkg install proot -y &>/dev/null
 pkg install wget -y &>/dev/null
 pkg install tsu -y &>/dev/null
 pkg install root-repo -y &>/dev/null
-rm -rf $HOME/termux-box
-mkdir -p $HOME/termux-box
-cd $HOME/termux-box
-wget https://github.com/olegos2/termux-box/raw/main/termux-x11-1.02.07-0-all.deb &>/dev/null
+rm -rf $HOME/box64c
+mkdir -p $HOME/box64c
+cd $HOME/box64c
+wget https://github.com/lsl330/box64c/raw/main/termux-x11-1.02.07-0-all.deb &>/dev/null
 dpkg -i termux-x11-1.02.07-0-all.deb &>/dev/null
 rm -rf termux-x11-1.02.07-0-all.deb
 
 echo ""
 echo "Downloading preconfigured Rootfs..."
-cd $HOME/termux-box
-wget https://github.com/olegos2/termux-box/releases/download/0.0.1-alpha/rootfs.tar.xz
+cd $HOME/box64c
+wget https://github.com/lsl330/box64c/releases/download/0.0.1-alpha/rootfs.tar.xz
 
 echo ""
 echo "Unzipping Rootfs"
 tar -xf rootfs.tar.xz
 rm -rf rootfs.tar.xz
 
-cd $HOME/termux-box/ubuntu-fs/opt
-wget https://github.com/olegos2/termux-box/raw/main/scripts.tar.gz &>/dev/null
+cd $HOME/box64c/ubuntu-fs/opt
+wget https://github.com/lsl330/box64c/raw/main/scripts.tar.gz &>/dev/null
 tar -xf scripts.tar.gz
 rm -rf scripts.tar.gz
 
-cd $HOME/termux-box/
-wget -N https://github.com/olegos2/termux-box/raw/main/termux-box &>/dev/null
-chmod +x termux-box
-mv termux-box $PREFIX/bin/
-wget -N https://github.com/olegos2/termux-box/raw/main/start-proot.sh &>/dev/null
-wget -N https://github.com/olegos2/termux-box/raw/main/start-chroot.sh &>/dev/null
+cd $HOME/box64c/
+wget -N https://github.com/lsl330/box64c/raw/main/box64c &>/dev/null
+chmod +x box64c
+mv box64c $PREFIX/bin/
+wget -N https://github.com/lsl330/box64c/raw/main/start-proot.sh &>/dev/null
+wget -N https://github.com/lsl330/box64c/raw/main/start-chroot.sh &>/dev/null
 chmod +x start-proot.sh
 chmod +x start-chroot.sh
 
-echo "Installing patch"
-
-cd $HOME/termux-box/ubuntu-fs
-wget https://github.com/olegos2/termux-box/releases/download/0.0.1-alpha/patch.tar.xz
-tar -xf patch.tar.xz
-rm -rf patch.tar.xz
-cd
 rm -rf $HOME/x
-. $PREFIX/bin/termux-box
+. $PREFIX/bin/box64c
