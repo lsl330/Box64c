@@ -19,7 +19,7 @@ pkg update -y
 pkg upgrade -y
 sleep 2
 echo ""
-echo "Installing packages"
+echo "安装需要的软件包"
 pkg install x11-repo -y &>/dev/null
 pkg install pulseaudio -y &>/dev/null
 pkg install xwayland -y &>/dev/null
@@ -53,6 +53,5 @@ wget -N https://github.com/lsl330/Box64c/raw/main/start-proot.sh &>/dev/null
 wget -N https://github.com/lsl330/Box64c/raw/main/start-chroot.sh &>/dev/null
 chmod +x start-proot.sh
 chmod +x start-chroot.sh
-
-rm -rf $HOME/x
+echo "安装完成，输入boxwine启动"
 . $PREFIX/bin/boxwine
