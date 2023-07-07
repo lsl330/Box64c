@@ -14,6 +14,7 @@ fi
 sleep 1
 done
 mkdir -p /sdcard/Box64c
+mkdir ~/drive_e &>/dev/null
 pkg clean
 pkg update -y
 pkg upgrade -y
