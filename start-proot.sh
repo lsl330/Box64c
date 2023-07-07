@@ -13,13 +13,12 @@ fi
 
 unset LD_PRELOAD
 command="proot"
-command+=" --link2symlink -0 -r ubuntu-fs -w /root -b /dev -b /proc -b /sys -b $PREFIX/tmp:/tmp"
+command+=" --link2symlink -0 -r ubuntu-fs -w /root -b /dev -b /proc -b /sys -b $PREFIX/tmp/.X11-unix/:/tmp/.X11-unix/"
 command+=" -b ubuntu-fs/root:/dev/shm"
 command+=" -b /sdcard"
-command+=" -b /sdcard/Android/data/com.termux/files:/termux"
+command+=" -b /data/data/com.termux/files/home/drive_e:/mnt/drive_e"
 
 command+=" /usr/bin/env -i HOME=/root TERM=$TERM PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games LANG=C.UTF-8 /bin/bash --login"
-
 exec $command
 
 if [ -f ubuntu-fs/opt/virgl ]; then
