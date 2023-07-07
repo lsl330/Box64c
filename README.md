@@ -1,5 +1,5 @@
 ## 简介
-termux-box的一个中文版分支（现在还不能下载），本项目基于[https://github.com/olegos2/termux-box](https://github.com/olegos2/termux-box)
+termux-box的一个中文版分支，本项目基于[https://github.com/olegos2/termux-box](https://github.com/olegos2/termux-box)
 
 ## 安装方式
 curl -o install https://raw.githubusercontent.com/lsl330/Box64c/main/install && chmod +x install && ./install
