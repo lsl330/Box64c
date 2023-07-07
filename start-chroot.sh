@@ -6,7 +6,7 @@ export USER=root
 export HOME=/root
 export LANGUAGE=C
 export LANG=C
-folder=/data/data/com.termux/files/home/box64c/ubuntu-fs
+folder=/data/data/com.termux/files/home/Box64c/ubuntu-fs
 
 if [ -f $folder/opt/virgl ]; then
 pkill virgl
@@ -25,7 +25,7 @@ sudo mount --bind /proc $folder/proc
 sudo mount --bind /dev/pts $folder/dev/pts
 sudo mount --bind /data/data/com.termux/files/usr/tmp $folder/tmp
 sudo mount --bind /storage/emulated/0/ $folder/sdcard
-sudo mount --bind /data/data/com.termux/files/home/drive_e $folder/termux
+sudo mount --bind /data/data/com.termux/files/home/drive_e $folder/mnt/drive_e
 
 sudo chroot $folder /bin/su - root
 sudo umount $folder/dev/pts
@@ -33,7 +33,7 @@ sudo umount $folder/dev
 sudo umount $folder/proc
 sudo umount $folder/tmp
 sudo umount $folder/sdcard
-sudo umount $folder/termux
+sudo umount $folder/mnt/drive_e
 sudo umount $folder/sys
 if [ -f $folder/opt/virgl ]; then
 pkill virgl
