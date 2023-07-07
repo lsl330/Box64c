@@ -53,5 +53,6 @@ wget -N https://github.com/lsl330/Box64c/raw/main/start-proot.sh &>/dev/null
 wget -N https://github.com/lsl330/Box64c/raw/main/start-chroot.sh &>/dev/null
 chmod +x start-proot.sh
 chmod +x start-chroot.sh
+rm -f ./install
 echo "安装完成，输入boxwine启动"
 . $PREFIX/bin/boxwine
