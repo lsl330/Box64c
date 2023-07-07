@@ -6,14 +6,14 @@ echo "获取文件管理权限"
 termux-setup-storage & sleep 4 &>/dev/null
 while true; do
 if [ -e storage ]; then
-rm -rf /sdcard/box64c
+rm -rf /sdcard/Box64c
 break
 else
 echo "你必须授权文件管理权限才能进行下一步操作"
 fi
 sleep 1
 done
-mkdir -p /sdcard/box64c
+mkdir -p /sdcard/Box64c
 pkg clean
 pkg update -y
 pkg upgrade -y
@@ -27,17 +27,17 @@ pkg install proot -y &>/dev/null
 pkg install wget -y &>/dev/null
 pkg install tsu -y &>/dev/null
 pkg install root-repo -y &>/dev/null
-rm -rf $HOME/box64c
-mkdir -p $HOME/box64c
-cd $HOME/box64c
-wget https://github.com/lsl330/box64c/raw/main/termux-x11-1.02.07-0-all.deb &>/dev/null
+rm -rf $HOME/Box64c
+mkdir -p $HOME/Box64c
+cd $HOME/Box64c
+wget https://github.com/lsl330/Box64c/raw/main/termux-x11-1.02.07-0-all.deb &>/dev/null
 dpkg -i termux-x11-1.02.07-0-all.deb &>/dev/null
 rm -rf termux-x11-1.02.07-0-all.deb
 
 echo ""
 echo "下载预配置的Rootfs..."
-cd $HOME/box64c
-wget https://github.com/lsl330/box64c/releases/download/0.0.1-alpha/rootfs.tar.xz
+cd $HOME/Box64c
+wget https://github.com/lsl330/Box64c/releases/download/0.0.1-alpha/rootfs.tar.xz
 
 echo ""
 echo "解压Rootfs"
@@ -46,11 +46,11 @@ rm -rf rootfs.tar.xz
 
 
 cd $HOME/Box64c/
-wget -N https://github.com/lsl330/box64c/raw/main/boxwine &>/dev/null
+wget -N https://github.com/lsl330/Box64c/raw/main/boxwine &>/dev/null
 chmod +x boxwine
 mv boxwine $PREFIX/bin/
-wget -N https://github.com/lsl330/box64c/raw/main/start-proot.sh &>/dev/null
-wget -N https://github.com/lsl330/box64c/raw/main/start-chroot.sh &>/dev/null
+wget -N https://github.com/lsl330/Box64c/raw/main/start-proot.sh &>/dev/null
+wget -N https://github.com/lsl330/Box64c/raw/main/start-chroot.sh &>/dev/null
 chmod +x start-proot.sh
 chmod +x start-chroot.sh
 
