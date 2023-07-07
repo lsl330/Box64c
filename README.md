@@ -2,7 +2,7 @@
 termux-box的一个中文版分支（现在还不能下载），本项目基于[https://github.com/olegos2/termux-box](https://github.com/olegos2/termux-box)
 
 ## 安装方式
-curl -s -o install https://github.com/lsl330/Box64c/blob/main/install && chmod +x install && ./install
+curl -o install https://raw.githubusercontent.com/lsl330/Box64c/main/install && chmod +x install && ./install
 
 ## 第三方应用
 
