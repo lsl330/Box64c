@@ -55,4 +55,4 @@ chmod +x start-proot.sh
 chmod +x start-chroot.sh
 
 rm -rf $HOME/x
-. $PREFIX/bin/box64c
+. $PREFIX/bin/boxwine
