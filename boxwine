@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $HOME/termux-box
+cd $HOME/Box64c
 
 sudo chown -hR $(whoami) ubuntu-fs/root $>/dev/null
 
@@ -10,9 +10,9 @@ mkdir -p /sdcard/Android/data/com.termux/files/Download &>/dev/null
 
 termux-x11 :1 &>/dev/null & pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
 
-mkdir /sdcard/termux-box >/dev/null 2>&1
-cp -n ubuntu-fs/opt/Env.conf /sdcard/termux-box >/dev/null 2>&1
-cp -n ubuntu-fs/opt/dxvk.conf /sdcard/termux-box >/dev/null 2>&1
+mkdir /sdcard/Box64c >/dev/null 2>&1
+cp -n ubuntu-fs/opt/Env.conf /sdcard/Box64c >/dev/null 2>&1
+cp -n ubuntu-fs/opt/dxvk.conf /sdcard/Box64c >/dev/null 2>&1
 negus=$(cat ubuntu-fs/opt/script.conf)
 if [ "$negus" = "" ]; then
 echo ""
